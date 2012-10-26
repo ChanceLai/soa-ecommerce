@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/examples/JPAä¾‹å­/example1/target/
+/examples/JPAÀı×Ó/example1/target
