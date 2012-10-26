@@ -1,0 +1,2 @@
+example1里的是持久化单元（PU）的定义；
+example2里的是引用example1里的PU发布出来的EntityManagerFactory的例子。
