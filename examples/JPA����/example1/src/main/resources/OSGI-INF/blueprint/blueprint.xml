@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+    <cm:property-placeholder persistent-id="com.ponder.examples.jpa01">
+        <cm:default-properties>
+            <cm:property name="DS.DriverName" value="com.mysql.jdbc.Driver" />
+            <cm:property name="DS.Url" value="jdbc:mysql://192.168.0.1:3306/mydb" />
+            <cm:property name="DS.User" value="user" />
+            <cm:property name="DS.Password" value="password" />
+            <cm:property name="DS.InitialSize" value="5" />
+            <cm:property name="DS.MinIdle" value="5" />
+            <cm:property name="DS.MaxIdle" value="20" />
+            <cm:property name="DS.MaxWait" value="1000" /> <!-- 1000毫秒 -->
+            <cm:property name="DS.MaxActive" value="30" />
+            <cm:property name="DS.LogAbandoned" value="true"/>
+            <cm:property name="DS.RemoveAbandoned" value="true"/>
+            <cm:property name="DS.RemoveAbandonedTimeout" value="180"/> <!-- 180秒 -->
+            <cm:property name="DS.TestWhileIdle" value="true"/>
+            <cm:property name="DS.TestOnBorrow" value="false"/>
+            <cm:property name="DS.TestOnReturn" value="false"/>
+            <cm:property name="DS.ValidationQuery" value="SELECT COUNT(0) FROM DUAL"/>
+            <cm:property name="DS.ValidationQueryTimeout" value="1"/>
+            <cm:property name="DS.TimeBetweenEvictionRunsMillis" value="30000"/>
+            <cm:property name="DS.NumTestsPerEvictionRun" value="30"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
+    <bean  id="jpa01DS" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${DS.DriverName}" />
+        <property name="url" value="${DS.Url}" />
+        <property name="username" value="${DS.User}" />
+        <property name="password" value="${DS.Password}" />
+        <property name="initialSize" value="${DS.InitialSize}"/>
+        <property name="minIdle" value="${DS.MinIdle}"/>
+        <property name="maxIdle" value="${DS.MaxIdle}"/>
+        <property name="maxWait" value="${DS.MaxWait}"/>
+        <property name="maxActive" value="${DS.MaxActive}"/>
+        <property name="logAbandoned" value="${DS.LogAbandoned}"/>
+        <property name="removeAbandoned" value="${DS.RemoveAbandoned}"/>
+        <property name="removeAbandonedTimeout" value="${DS.RemoveAbandonedTimeout}"/>
+        <property name="testWhileIdle" value="${DS.TestWhileIdle}"/>
+        <property name="testOnBorrow" value="${DS.TestOnBorrow}"/>
+        <property name="testOnReturn" value="${DS.TestOnReturn}"/>
+        <property name="validationQuery" value="${DS.ValidationQuery}"/>
+        <property name="validationQueryTimeout" value="${DS.ValidationQueryTimeout}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${DS.TimeBetweenEvictionRunsMillis}"/>
+        <property name="numTestsPerEvictionRun" value="${DS.NumTestsPerEvictionRun}"/>
+    </bean>
+    <service ref="jpa01DS" interface="javax.sql.DataSource">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/jpa01DS"/>
+        </service-properties>
+    </service>
+</blueprint>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0">
+    <bean id="jpa02_bean" class="com.ponder.examples.jpa02.mybean">
+        <jpa:unit property="emf" unitname="com.ponder.examples.jpa01PU" />
+    </bean>
+    <!--bala-bala belowed -->
+</blueprint>
