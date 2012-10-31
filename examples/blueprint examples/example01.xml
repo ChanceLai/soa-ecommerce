@@ -7,4 +7,23 @@
     <service id="CoderService2" interface="com.ponder.ICoder">
     	<bean class="com.ponder.CoderImpl"/>
     </service>
+    <!--带osgi服务属性的服务-->
+    <service id="CoderService3" interface="com.ponder.ICoder">
+    	<service-properties>
+    		<entry key="param01" value="val01"/>
+    		<entry key="param02" value="val02"/>
+    		<entry key="param03">
+        	<array value-type="java.lang.String">
+          	<value>val03-1</value>
+            <value>val03-2</value>
+            <value>val03-3</value>
+            </array>
+        </entry>
+    	</service-properties>
+    	<bean class="com.ponder.CoderImpl"/>
+    </service>
+    <!-- 没将接口抽离出来的osgi服务,会将com.ponder.CoderImpl里的所有public方法都作为服务的方法 -->
+    <service id="CoderService3" interface="com.ponder.CoderImpl">
+    	<bean class="com.ponder.CoderImpl"/>
+    </service>
 </blueprint>
