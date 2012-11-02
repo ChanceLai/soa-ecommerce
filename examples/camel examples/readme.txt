@@ -1,0 +1,2 @@
+Example01:
+包含两个路由，一个是普通的处理消息队列里的消息；另一个是用quartz endpoint产生定时消息给后续的processor作处理。
