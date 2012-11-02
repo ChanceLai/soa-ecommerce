@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd" default-timeout="0">
+    <!--引用osgi服务,并注入bean(com.ponder.Processor)里 -->
+    <cm:property-placeholder persistent-id="com.ponder.configuration">
+        <cm:default-properties>
+            <cm:property name="Type" value="0" />
+            <cm:property name="URL" value="http://192.168.0.2/" />
+        </cm:default-properties>
+    </cm:property-placeholder>
+    <!--使用配置数据的例子 -->
+    <bean id="bean04" class="com.ponder.examples.bean04">
+    	<property name="url" value="${URL}"/>			
+    	<property name="type" value="${Type}"/>
+    </bean>
+    
+</blueprint>
