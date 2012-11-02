@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd" default-timeout="0">
-    <!--引用osgi服务,并注入bean(com.ponder.Processor)里 -->
+    <!--从ConfigAdmin服务里获取ID为"com.ponder.configuration"的配置数据，如果配置数据里没有以下数据，则用以下的默认值 -->
     <cm:property-placeholder persistent-id="com.ponder.configuration">
         <cm:default-properties>
             <cm:property name="Type" value="0" />
