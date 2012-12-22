@@ -68,7 +68,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
             <version>4.2.0</version>
-            <scope>test</scope>
             <type>jar</type>
         </dependency>
     </dependencies>
