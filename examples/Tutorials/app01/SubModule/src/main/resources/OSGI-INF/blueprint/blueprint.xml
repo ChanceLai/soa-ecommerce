@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+<bean id="sub_worker" class="com.ponder.tutorials.app01.SubModule.Calculator"></bean>
 
+    <service id="SubService" ref="sub_worker" interface="com.ponder.tutorials.app01.Calculator.Export.ICalculator">
+        <service-properties>
+            <entry key="method" value="sub"/>
+        </service-properties>
+    </service>
 </blueprint>

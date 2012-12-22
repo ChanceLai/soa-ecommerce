@@ -70,5 +70,11 @@
             <version>4.2.0</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.ponder.tutorials.app01</groupId>
+            <artifactId>Calculator</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>

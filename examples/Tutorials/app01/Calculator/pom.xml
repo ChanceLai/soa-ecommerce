@@ -47,7 +47,7 @@
                             <Bundle-Version>${project.version}</Bundle-Version>
                             <Bundle-Vendor>${project.groupId}</Bundle-Vendor>
                             <Bundle-Activator>${project.groupId}.${project.ArtifactId}.Activator</Bundle-Activator>
-                            <Export-Package>${project.groupId}.${project.ArtifactId}</Export-Package>
+                            <Export-Package>${project.groupId}.${project.ArtifactId}.Export</Export-Package>
                             <Import-Package>org.osgi.framework</Import-Package>
                             <Embed-Dependency>*</Embed-Dependency>
                             <DynamicImport-Package>*</DynamicImport-Package>
