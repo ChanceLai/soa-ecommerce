@@ -46,6 +46,7 @@
                             <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
                             <Bundle-Version>${project.version}</Bundle-Version>
                             <Bundle-Vendor>${project.groupId}</Bundle-Vendor>
+                            <Bundle-Activator>${project.groupId}.${project.ArtifactId}.Activator</Bundle-Activator>
                             <Export-Package>${project.groupId}.${project.ArtifactId}</Export-Package>
                             <Import-Package>org.osgi.framework</Import-Package>
                             <Embed-Dependency>*</Embed-Dependency>
@@ -61,6 +62,13 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.6.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>4.2.0</version>
+            <scope>test</scope>
             <type>jar</type>
         </dependency>
     </dependencies>
