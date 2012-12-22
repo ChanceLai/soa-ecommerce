@@ -17,4 +17,5 @@
                 </array>
             </entry>
         </service-properties>
+    </service>
 </blueprint>
